@@ -5,7 +5,8 @@ let _db;
 
 const mongoConnect = (callback) => {
 	MongoClient
-	.connect('mongodb+srv://kiko:12345@cluster0.u2uu1.mongodb.net/shop?retryWrites=true&w=majority')
+	.connect('mongodb+srv://kiko:12345@cluster0.u2uu1.mongodb.net/shop?retryWrites=true&w=majority', 
+		{useUnifiedTopology: true })
 	.then(client => {
 		console.log('Connected!');
 		_db = client.db();
