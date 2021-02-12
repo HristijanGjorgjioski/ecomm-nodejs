@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const stripe = require('stripe')('sk_test_51IHPiGF8qQUUeD9WitQSxpA2I09WTUpRTuI79zuDamrNOVh35xEmsJgWXaaPIMiVt7dDSQnXv433tLsdjoUszX7j00qxncjIpO');
+const stripe = require('stripe')(process.env.STRIPE_KEY);
 
 const PDFDocument = require('pdfkit');
 
@@ -304,20 +304,6 @@ exports.getInvoice = (req, res, next) => {
       pdfDoc.fontSize(20).text('Total Price: $' + totalPrice);
 
       pdfDoc.end();
-      // fs.readFile(invoicePath, (err, data) => {
-      //   if (err) {
-      //     return next(err);
-      //   }
-      //   res.setHeader('Content-Type', 'application/pdf');
-      //   res.setHeader(
-      //     'Content-Disposition',
-      //     'inline; filename="' + invoiceName + '"'
-      //   );
-      //   res.send(data);
-      // });
-      // const file = fs.createReadStream(invoicePath);
-
-      // file.pipe(res);
     })
     .catch(err => next(err));
 };

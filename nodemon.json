@@ -1,0 +1,8 @@
+{
+    "env": {
+        "MONGO_USER": "admin",
+        "MONGO_PASSWORD": "KmeVxFd5g2UpCTH",
+        "MONGO_DEFAULT_DATABASE": "ecomm",
+        "STRIPE_KEY": "sk_test_ZztUmNmbi1a76Zi9YsbBJI0V00Fzd6A2jt"
+    }
+}
